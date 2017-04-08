@@ -1,0 +1,123 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <button class="facebook_button" ng-click="fbLogin()">Connect to Facebook</button>
+    <h1 class="page-header">SocialDashboard</h1>
+    <div class="row placeholders">
+        <div class="row">
+            <div class="col-sm-6" ng-mouseover="ToggleDiv('chart2', 'chart2data')" ng-mouseleave="ToggleDiv('chart2data', 'chart2')">
+                <div class="chat-icons" style="z-index:10000;right: 0;position: absolute;">
+                    <img ng-click="selectImage($event)"  src="./assests/chart_icon.png" class="icon" width="30px" height="30px"></img>
+                    <img ng-click="selectImage($event)" class="icon" src="./assests/text_icon.svg" width="30px" height="30px"></img>
+                </div>
+                <div id="chart2data" style="padding: 10px; padding-top: 30px;position: absolute;">This should not be shown when chart is being shownThis should not be shown when chart is being shownThis should not be shown when chart is being shownThis should not be shown when chart is being shownThis should not be shown when chart is being shownThis should not be shown when chart is being shownThis should not be shown when chart is being shownThis should not be shown when chart is being shownThis should not be shown when chart is being shownThis should not be shown when chart is being shownThis should not be shown when chart is being shown</div>
+                <div id="Reactions_BarChart" style='position: relative;'></div>
+            </div>
+            <div class="col-sm-6"><div id="AllCounts_BarChart"></div></div>
+        </div>
+        <hr>
+        <div class="table-responsive">
+            <h2 class="sub-header">Your Top Posts</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th class="placeholders">Rank</th>
+                    <th class="placeholders">Post</th>
+                    <th class="placeholders">Likes</th>
+                    <th class="placeholders">Comments</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat-start="post in posts.slice(0,5)" ng-mouseover="selectPost($index)" ng-click="selectPost($index)">
+                    <td>{{$index+1}}</td>
+                    <td>{{post.story}}</td>
+                    <td>{{post.reactions_total_count}}</td>
+                    <td>{{post.comments_total_count}}</td>
+                </tr>
+                <tr ng-repeat-end>
+                    <td colspan="4">
+                        <div class="check-element" ng-hide="$index !== postSelected">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <canvas style="width:380px;height:219px" id='{{$index+"canvas"}}'></canvas><br>
+                                </div>
+                                <div class="col-lg-6">
+                                    <!--
+                                        Some text which related to post.
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <h2 class="sub-header">Your Top Friends</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th class="placeholders">Friend</th>
+                    <th class="placeholders">Like</th>
+                    <th class="placeholders">Love</th>
+                    <th class="placeholders">Wow</th>
+                    <th class="placeholders">Angry</th>
+                    <th class="placeholders">Haha</th>
+                    <th class="placeholders">Comments</th>
+                    <th class="placeholders">Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>radhakrish</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                </tr>
+                <tr>
+                    <td>tirupathi</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                </tr>
+                <tr>
+                    <td>meghana</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                    <td>1,015</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr><h2 class="sub-header">Your Life on facebook</h2>
+        <div id="chart"></div>
+        <h2 class="sub-header">Facebook Fan Base Growth Rate</h2>
+        <div id="FanBase_LineChart"></div><hr>
+        <h2 class="sub-header">facts about your social life</h2>
+        <table class="table table-striped">
+            <tbody>
+            <tr>
+                <td>This is all about fact 1</td>
+            </tr>
+            <tr>
+                <td>This is all about fact 2</td>
+            </tr>
+            <tr>
+                <td>This is all about fact n</td>
+            </tr>
+            </tbody>
+        </table>
+        <h2 class="sub-header">It's All About your follwers</h2>
+        <div id="Friends"></div>
+    </div>
+</div>
+</div>

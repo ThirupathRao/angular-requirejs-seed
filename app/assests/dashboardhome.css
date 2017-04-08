@@ -1,0 +1,12 @@
+.icon {
+    opacity: 0.5;
+    filter:alpha(opacity=40);
+   cursor: pointer; cursor: hand
+}
+.icon img:hover {
+    opacity: 1.0;
+    filter:alpha(opacity=100);
+}
+.whiteb{
+    background-color: white  !important;
+}

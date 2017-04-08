@@ -5,17 +5,57 @@
 	<link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
 	<link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
 	<script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+	<link href="./assests/bootstrap.min.css" rel="stylesheet">
+
+	<link href="./assests/c3.min.css" rel="stylesheet">
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<link href="./assests/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="./assests/dashboard.css" rel="stylesheet">
+	<link href="./assests/dashboardhome.css" rel="stylesheet">
 	<title>My AngularJS App</title>
 	<link rel="stylesheet" href="app.css">
 </head>
 <body ng-cloak>
-	<ul class="menu">
-		<li><a href="#/view1">view1</a></li>
-		<li><a href="#/view2">view2</a></li>
-	</ul>
-
+<nav class="navbar navbar-inverse navbar-fixed-top whiteb">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="">SocialDashboard</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+			<ul class="nav navbar-nav navbar-right">
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-3 col-md-2 sidebar whiteb">
+			<ul class="nav nav-sidebar">
+				<li class="active"><a href="#/dashboard">Dashboard</a></li>
+				<li><a href="">Compete with Friends</a></li>
+				<li><a href="">Global Top Profile</a></li>
+			</ul>
+			<ul class="nav nav-sidebar">
+				<li><a href="">Discussions</a></li>
+				<li><a href="">Contact Me</a></li>
+				<li><a href="">About Me</a></li>
+			</ul>
+			<ul class="nav nav-sidebar">
+				<li><a href="">Share</a></li>
+				<li><a href="">Star on github</a></li>
+			</ul>
+		</div>
 	<div ng-view></div>
-
+	</div>
+</div>
 	<div>Angular seed app: v<span app-version></span></div>
 	<script data-main="require-config" src="bower_components/requirejs/require.js"></script>
 </body>

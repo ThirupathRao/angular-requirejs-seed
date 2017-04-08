@@ -21,15 +21,28 @@ require.config({
 		angular: 'bower_components/angular/angular',
 		angularRoute: 'bower_components/angular-route/angular-route',
 		angularMocks: 'bower_components/angular-mocks/angular-mocks',
-		text: 'bower_components/requirejs-text/text'
+		text: 'bower_components/requirejs-text/text',
+		d3: './js/d3.min',
+		c3: './js/c3.min',
+		jquery: 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min',
 	},
 	shim: {
-		'angular' : {'exports' : 'angular'},
+		'angular' : {
+				deps:['jquery'],
+				'exports' : 'angular'
+		},
 		'angularRoute': ['angular'],
 		'angularMocks': {
 			deps:['angular'],
 			'exports':'angular.mock'
-		}
+		},
+        'd3': {
+            exports: 'd3'
+        },
+		'c3': {
+			deps:['d3'],
+			'exports': 'c3'
+		},
 	},
 	priority: [
 		"angular"
@@ -41,8 +54,8 @@ require.config({
 
 require([
 	'angular',
-	'app'
-	], function(angular, app) {
+	'./mainapp'
+	], function(angular, mainapp) {
 		var $html = angular.element(document.getElementsByTagName('html')[0]);
 		angular.element().ready(function() {
 			// bootstrap the app manually
